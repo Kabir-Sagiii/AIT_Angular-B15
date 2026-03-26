@@ -1,0 +1,14 @@
+#main {
+  width: 1000px;
+  margin: 50px auto;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 20px;
+}
+#main h1 {
+  margin-bottom: 20px;
+}
+#main p {
+  margin-bottom: 13px;
+}
