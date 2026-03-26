@@ -1,0 +1,13 @@
+.card {
+  width: 230px;
+  height: 100%;
+  box-shadow: 0 0 10px black;
+  text-align: center;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.card p {
+  font-style: italic;
+  color: tomato;
+}

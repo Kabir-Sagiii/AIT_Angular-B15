@@ -1,0 +1,18 @@
+.trendingProduct {
+  height: 370px;
+
+  width: 1100px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-rows: 18% 82%;
+  padding: 20px;
+  gap: 20px;
+}
+
+.trendingProduct > div:nth-child(1) {
+  color: tomato;
+}
+.trendingProduct > div:nth-child(2) {
+  display: flex;
+  justify-content: space-evenly;
+}
