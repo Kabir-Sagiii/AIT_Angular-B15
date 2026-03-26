@@ -1,0 +1,21 @@
+<div class="div-container">
+  <h1 [attr.draggable]="isDraggable">Attribute Binding</h1>
+  <br />
+  <div [attr.contenteditable]="editable">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptatum, unde ea natus
+    necessitatibus neque, esse laboriosam voluptas eius consequatur deleniti quae asperiores at
+    sequi temporibus corporis corrupti, accusantium magnam aut reprehenderit aliquam! Doloribus
+    omnis perferendis quo voluptas aspernatur, sequi architecto nulla cupiditate veniam nemo modi
+    minima totam facere assumenda dignissimos quis culpa suscipit ipsam, pariatur eius deleniti
+    voluptatum soluta est? Consequuntur et harum mollitia similique eveniet eligendi, blanditiis
+    optio obcaecati numquam quibusdam eos temporibus necessitatibus error, praesentium expedita?
+    Cumque, vitae. Eligendi qui libero quod porro architecto consectetur error debitis. Deleniti
+    labore ut modi vel dolorum illum nobis dignissimos corrupti.
+  </div>
+  <br />
+
+  <button [disabled]="disabled" (click)="enableDiableEditing(true)">Enable Editing</button
+  >&nbsp;&nbsp;
+
+  <button [disabled]="!disabled" (click)="enableDiableEditing(false)">Disable Editing</button>
+</div>

@@ -1,0 +1,52 @@
+<section id="categories">
+  <div>
+    <img
+      src="https://cdn.textstudio.com/output/sample/normal/9/2/0/5/all-logo-275-5029.png"
+      width="50"
+      height="50"
+      alt=""
+    />
+    <h2>All</h2>
+  </div>
+  <div>
+    <img
+      src="https://img.freepik.com/premium-photo/collection-electronic-devices-black-background-generative-ai_893571-1990.jpg?w=740"
+      width="50"
+      height="50"
+      alt=""
+    />
+    <h2>Electronics</h2>
+  </div>
+
+  <div>
+    <img
+      src="https://www.thefashionisto.com/wp-content/uploads/2023/05/Mens-Trenchcoat.jpg"
+      width="50"
+      height="50"
+      alt=""
+    />
+    <h2>Mens</h2>
+  </div>
+  <div>
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/027/110/402/non_2x/fashion-model-kids-free-photo.jpg"
+      width="50"
+      height="50"
+      alt=""
+    />
+    <h2>Kids</h2>
+  </div>
+</section>
+
+<section id="products">
+  @for (element of data; track element) {
+    <div class="product">
+      <img [src]="element.image" width="100%" height="200" alt="" />
+      <h2>{{ element.name }}</h2>
+      <p>$ {{ element.price }}</p>
+      <p style="font-style: italic">{{ element.description }}</p>
+      <button>Product Details</button>
+      <button>Add to Cart</button>
+    </div>
+  }
+</section>

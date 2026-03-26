@@ -1,0 +1,23 @@
+<section id="categories">
+  @for (categoryProduct of categories; track categoryProduct) {
+    <div (click)="changeSelectedCategory(categoryProduct.category)">
+      <img [src]="categoryProduct.url" width="70" height="70" alt="" />
+      <h2>{{ categoryProduct.category }}</h2>
+    </div>
+  }
+</section>
+
+<section id="products">
+  @for (element of data; track element) {
+    @if (selectedCategory === 'all' || element.category === selectedCategory) {
+      <div class="product">
+        <img [src]="element.image" width="100%" height="200" alt="" />
+        <h2>{{ element.name }}</h2>
+        <p>$ {{ element.price }}</p>
+        <p style="font-style: italic">{{ element.description }}</p>
+        <button>Product Details</button>
+        <button>Add to Cart</button>
+      </div>
+    }
+  }
+</section>

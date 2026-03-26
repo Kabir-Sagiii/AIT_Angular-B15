@@ -1,0 +1,17 @@
+<div style="padding: 50px">
+  <button (click)="showElement()">Show</button>&nbsp; <button (click)="hideElement()">Hide</button
+  ><br />
+  @if (data) {
+    <h1 style="color: green">Element is Visible</h1>
+  } @else if (false) {
+    <p>else if Directive is working here</p>
+  } @else if (true) {
+    <p>else if Directive 2</p>
+  } @else {
+    <h1 style="color: red">Element is Hidden</h1>
+  }
+
+  <!-- @if (!data) {
+    <h1>Concept of Structural Directive : if Directive</h1>
+  } -->
+</div>

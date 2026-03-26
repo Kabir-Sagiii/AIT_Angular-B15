@@ -1,0 +1,442 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-products',
+  imports: [],
+  templateUrl: './products.html',
+  styleUrl: './products.css',
+})
+export class Products {
+
+  selectedCategory:string = "all"
+
+  categories = [
+    {url:"https://cdn.textstudio.com/output/sample/normal/9/2/0/5/all-logo-275-5029.png",category:"all"},
+    {url:"https://img.freepik.com/premium-photo/collection-electronic-devices-black-background-generative-ai_893571-1990.jpg?w=740",category:"electronics"},{url:"https://www.thefashionisto.com/wp-content/uploads/2023/05/Mens-Trenchcoat.jpg",category:"men's clothing"},
+    {url:"https://t4.ftcdn.net/jpg/04/72/44/67/360_F_472446747_AmtV7OdEJVyzVRFsVTjVHhIiFV00bMNr.jpg",category:"women's clothing"},{url:"https://static.vecteezy.com/system/resources/previews/027/110/402/non_2x/fashion-model-kids-free-photo.jpg",category:"kids"},{url:"https://7esl.com/wp-content/uploads/2017/12/chairs-vocabulary.jpg",category:"furniture"},{url:"https://static.vecteezy.com/system/resources/thumbnails/045/907/153/small_2x/cosmetics-arranged-on-pink-background-free-photo.jpeg",category:"cosmetic"}]
+
+data = [
+  {
+    id: 1,
+    image:
+      "https://static.vecteezy.com/system/resources/thumbnails/024/656/689/small_2x/stock-foto-of-3d-modern-sofa-on-a-white-background-generative-ai-photo.jpg",
+    name: "Sofa",
+    category: "furniture",
+    price: 499.99,
+    description:
+      "A modern and comfortable sofa designed to enhance your living room's elegance.",
+    rating: 4.6,
+  },
+  {
+    id: 2,
+    image: "https://m.media-amazon.com/images/I/711DxvZTb7L._SL1500_.jpg",
+    name: "Dining Table",
+    category: "furniture",
+    price: 799.0,
+    description:
+      "Spacious dining table with a solid wooden finish, ideal for family gatherings.",
+    rating: 4.7,
+  },
+  {
+    id: 3,
+    image:
+      "https://tse1.mm.bing.net/th/id/OIP.kWKhP-xIf4jLxNLo3RETOwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+    name: "Bed Frame",
+    category: "furniture",
+    price: 650.0,
+    description: "A sturdy and stylish bed frame designed for modern bedrooms.",
+    rating: 4.5,
+  },
+  {
+    id: 4,
+    image: "https://thumbs.dreamstime.com/z/coffee-table-14607233.jpg?w=450",
+    name: "Coffee Table",
+    category: "furniture",
+    price: 129.99,
+    description:
+      "Compact and elegant coffee table to complement your living room.",
+    rating: 4.3,
+  },
+  {
+    id: 5,
+    image:
+      "https://i0.wp.com/magzhouse.com/wp-content/uploads/2020/03/Fabulous-Bookshelf-Design-Ideas-For-Your-Interior-Decor-06.jpg?ssl=1",
+    name: "Book Shelf",
+    category: "furniture",
+    price: 199.0,
+    description:
+      "Stylish bookshelf with multiple compartments for books and décor.",
+    rating: 4.4,
+  },
+  {
+    id: 6,
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.Ft-b3JpbVU1Bop-SdSGQpgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+    name: "Office Chair",
+    category: "furniture",
+    price: 179.0,
+    description:
+      "Ergonomic office chair with lumbar support for all-day comfort.",
+    rating: 4.6,
+  },
+  {
+    id: 7,
+    image:
+      "https://homefactree.com/wp-content/uploads/2021/07/CADIZ-WARDROBE-HF.jpg",
+    name: "Wardrobe",
+    category: "furniture",
+    price: 899.0,
+    description:
+      "Spacious wardrobe with multiple compartments for organized storage.",
+    rating: 4.7,
+  },
+  {
+    id: 8,
+    image: "https://m.media-amazon.com/images/I/71hp4bOpzgL._AC_SL1500_.jpg",
+    name: "TV Stand",
+    category: "furniture",
+    price: 220.0,
+    description: "Modern TV stand with storage shelves and a sleek design.",
+    rating: 4.5,
+  },
+  {
+    id: 9,
+    image:
+      "https://tse1.explicit.bing.net/th/id/OIP.LIt21nJ_NUnipQwV41F2ZgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+    name: "Recliner",
+    category: "furniture",
+    price: 549.99,
+    description:
+      "Comfortable recliner chair with adjustable back and footrest.",
+    rating: 4.8,
+  },
+  {
+    id: 10,
+    image:
+      "https://staranddaisy.in/wp-content/uploads/2022/07/tshirtshorts_14722.jpg",
+    name: "TShirts",
+    category: "kids",
+    price: 19.99,
+    description:
+      "Comfortable cotton t-shirt set perfect for daily wear and playtime.",
+    rating: 4.5,
+  },
+  {
+    id: 11,
+    image:
+      "https://img.ltwebstatic.com/images3_spmp/2024/09/24/ca/17271763295e21aeb07a9824db16ce97657d9c0ba1_thumbnail_900x.webp",
+    name: "Party Dresses",
+    category: "kids",
+    price: 35.0,
+    description:
+      "Stylish party dress designed for special occasions and celebrations.",
+    rating: 4.7,
+  },
+  {
+    id: 12,
+    image:
+      "https://slimages.macysassets.com/is/image/MCY/products/4/optimized/22520264_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1",
+    name: "Hoodies",
+    category: "kids",
+    price: 29.99,
+    description:
+      "Warm and cozy hoodie perfect for chilly days and casual wear.",
+    rating: 4.6,
+  },
+  {
+    id: 13,
+    image:
+      "https://imagescdn.simons.ca/images/8543-8531516-45-A1_2/vintage-blue-denim-overalls.jpg?__=6",
+    name: "Denim Overalls",
+    category: "kids",
+    price: 32.5,
+    description: "Classic denim overalls suitable for play and outdoor fun.",
+    rating: 4.4,
+  },
+  {
+    id: 14,
+    image:
+      "https://ae01.alicdn.com/kf/Ha7f9cbff91064c99bd4748b8aed1a423O/Swimsuit-Girl-One-Piece-Boys-Swimwear-UPF50-Sports-Swimming-Suit-for-Kids-Toddler-Teenager-Big-Boy.jpg_Q90.jpg_.webp",
+    name: "Swimmers",
+    category: "kids",
+    price: 24.0,
+    description:
+      "UPF50+ swimwear offering sun protection for kids during water fun.",
+    rating: 4.8,
+  },
+  {
+    id: 15,
+    image: "https://pngimg.com/uploads/lipstick/lipstick_PNG76274.png",
+    name: "Lipstick",
+    category: "cosmetic",
+    price: 15.99,
+    description: "Long-lasting matte lipstick available in multiple shades.",
+    rating: 4.7,
+  },
+  {
+    id: 16,
+    image:
+      "https://tse3.mm.bing.net/th/id/OIP.75G4vPjPF3-6KX5uB-fu0QHaFj?rs=1&pid=ImgDetMain&o=7&rm=3",
+    name: "Foundation",
+    category: "cosmetic",
+    price: 29.99,
+    description: "Smooth liquid foundation providing medium to full coverage.",
+    rating: 4.5,
+  },
+  {
+    id: 17,
+    image:
+      "https://tse1.explicit.bing.net/th/id/OIP.s7OXcZkM062C8INWtyIHigAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+    name: "Eyeliner",
+    category: "cosmetic",
+    price: 12.0,
+    description: "Precision liquid eyeliner for sharp, long-lasting lines.",
+    rating: 4.6,
+  },
+  {
+    id: 18,
+    image:
+      "https://i2-prod.dailyrecord.co.uk/incoming/article21486268.ece/ALTERNATES/s615/0_JS84611112.jpg",
+    name: "Mascara",
+    category: "cosmetic",
+    price: 18.5,
+    description: "Volumizing mascara for bold, thick lashes.",
+    rating: 4.8,
+  },
+  {
+    id: 19,
+    image:
+      "https://c.shld.net/rpx/i/s/i/spin/image/spin_prod_1198747112??hei=64&wid=64&qlt=50",
+    name: "Face Primer",
+    category: "cosmetic",
+    price: 20.0,
+    description:
+      "Lightweight face primer to smooth skin and extend makeup wear.",
+    rating: 4.4,
+  },
+  {
+    id: 20,
+    image:
+      "https://static.vecteezy.com/system/resources/thumbnails/003/636/960/small_2x/blush-sets-on-white-background-photo.jpg",
+    name: "Blush",
+    category: "cosmetic",
+    price: 14.99,
+    description: "Soft, blendable blush for a natural flush of color.",
+    rating: 4.5,
+  },
+  {
+    id: 21,
+    image: "https://www.arcnord.com/ProductImages/65ccf2c420440.png",
+    name: "Makeup Remover",
+    category: "cosmetic",
+    price: 10.0,
+    description: "Gentle makeup remover effective on waterproof cosmetics.",
+    rating: 4.7,
+  },
+  {
+    id: 22,
+    name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price: 109.95,
+    description:
+      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    category: "men's clothing",
+    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    rating: 3.9,
+  },
+  {
+    id: 23,
+    name: "Mens Casual Premium Slim Fit T-Shirts ",
+    price: 22.3,
+    description:
+      "Slim-fitting style, contrast raglan long sleeve, three-button henley placket...",
+    category: "men's clothing",
+    image:
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    rating: 4.1,
+  },
+  {
+    id: 24,
+    name: "Mens Cotton Jacket",
+    price: 55.99,
+    description:
+      "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions...",
+    category: "men's clothing",
+    image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    rating: 4.7,
+  },
+  {
+    id: 25,
+    name: "Mens Casual Slim Fit",
+    price: 15.99,
+    description:
+      "The color could be slightly different between on the screen and in practice...",
+    category: "men's clothing",
+    image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    rating: 2.1,
+  },
+  {
+    id: 26,
+    name: "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    price: 695,
+    description:
+      "From our Legends Collection, the Naga was inspired by the mythical water dragon...",
+    category: "jewelery",
+    image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
+    rating: 4.6,
+  },
+  {
+    id: 27,
+    name: "Solid Gold Petite Micropave ",
+    price: 168,
+    description:
+      "Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    category: "jewelery",
+    image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
+    rating: 3.9,
+  },
+  {
+    id: 28,
+    name: "White Gold Plated Princess",
+    price: 9.99,
+    description:
+      "Classic Created Wedding Engagement Solitaire Diamond Promise Ring...",
+    category: "jewelery",
+    image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png",
+    rating: 3,
+  },
+  {
+    id: 29,
+    name: "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    price: 10.99,
+    description: "Rose Gold Plated Double Flared Tunnel Plug Earrings.",
+    category: "jewelery",
+    image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
+    rating: 1.9,
+  },
+  {
+    id: 30,
+    name: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    price: 64,
+    description:
+      "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance...",
+    category: "electronics",
+    image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    rating: 3.3,
+  },
+  {
+    id: 31,
+    name: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    price: 109,
+    description:
+      "Easy upgrade for faster boot up, shutdown, application load and response...",
+    category: "electronics",
+    image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
+    rating: 2.9,
+  },
+  {
+    id: 32,
+    name: "Silicon Power 256GB SSD 3D NAND A55",
+    price: 109,
+    description:
+      "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds...",
+    category: "electronics",
+    image: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    rating: 4.8,
+  },
+  {
+    id: 33,
+    name: "WD 4TB Gaming Drive Works with Playstation 4",
+    price: 114,
+    description:
+      "Expand your PS4 gaming experience, Play anywhere Fast and easy setup...",
+    category: "electronics",
+    image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
+    rating: 4.8,
+  },
+  {
+    id: 34,
+    name: "Acer SB220Q bi 21.5 inches Full HD IPS Ultra-Thin",
+    price: 599,
+    description:
+      "21.5 inches Full HD widescreen IPS display And Radeon free Sync technology...",
+    category: "electronics",
+    image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    rating: 2.9,
+  },
+  {
+    id: 35,
+    name: "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor",
+    price: 999.99,
+    description:
+      "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screens...",
+    category: "electronics",
+    image: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+    rating: 2.2,
+  },
+  {
+    id: 36,
+    name: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket",
+    price: 56.99,
+    description:
+      "Note:The Jackets is US standard size... Detachable Functional Liner...",
+    category: "women's clothing",
+    image: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+    rating: 2.6,
+  },
+  {
+    id: 37,
+    name: "Lock and Love Women's Removable Hooded Faux Leather Jacket",
+    price: 29.95,
+    description:
+      "100% POLYURETHANE(shell)... Faux leather material for style and comfort...",
+    category: "women's clothing",
+    image: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
+    rating: 2.9,
+  },
+  {
+    id: 38,
+    name: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    price: 39.99,
+    description:
+      "Lightweight perfect for trip or casual wear... Adjustable drawstring waist...",
+    category: "women's clothing",
+    image: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
+    rating: 3.8,
+  },
+  {
+    id: 39,
+    name: "MBJ Women's Solid Short Sleeve Boat Neck V",
+    price: 9.85,
+    description:
+      "95% RAYON 5% SPANDEX, Made in USA or Imported, Lightweight fabric...",
+    category: "women's clothing",
+    image: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
+    rating: 4.7,
+  },
+  {
+    id: 40,
+    name: "Opna Women's Short Sleeve Moisture",
+    price: 7.95,
+    description:
+      "100% Polyester, Machine wash, Lightweight, roomy and highly breathable...",
+    category: "women's clothing",
+    image: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+    rating: 4.5,
+  },
+  {
+    id: 41,
+    name: "DANVOUY Womens T Shirt Casual Cotton Short",
+    price: 12.99,
+    description: "95%Cotton,5%Spandex, Casual, Short Sleeve, Letter Print...",
+    category: "women's clothing",
+    image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+    rating: 3.6,
+  },
+];
+
+        changeSelectedCategory(newCategory:string){
+          // alert(newCategory)
+          this.selectedCategory = newCategory
+        }
+
+}

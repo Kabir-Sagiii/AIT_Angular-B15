@@ -1,0 +1,23 @@
+<div class="switch-container">
+  @switch (selectedOption) {
+    @case ('angular') {
+      <h1>Angular is a Framework</h1>
+    }
+    @case ('react') {
+      <h1>React JS is JS Library</h1>
+    }
+    @case ('js') {
+      <h1>JS is a Language</h1>
+    }
+
+    @default {
+      <h1>Select the Correct Option</h1>
+    }
+  }
+
+  <select (change)="changeSelectedOption($event)">
+    <option value="angular">Angular</option>
+    <option value="react">React JS</option>
+    <option value="js">Javascript</option>
+  </select>
+</div>

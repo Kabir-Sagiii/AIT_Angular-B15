@@ -1,0 +1,41 @@
+#categories {
+  display: flex;
+  justify-content: space-evenly;
+  width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+#categories img {
+  border-radius: 50%;
+  box-shadow: 0 0 10px black;
+}
+#categories h2 {
+  font-size: 21px;
+  color: tomato;
+  margin-top: 11px;
+}
+#products {
+  width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.product {
+  width: 270px;
+  box-shadow: 0 0 10px green;
+  text-align: center;
+  padding: 7px 7px 13px;
+  border-radius: 7px;
+}
+.product h2 {
+  margin: 20px 0px;
+  color: green;
+}
+.product p {
+  margin: 13px 0px;
+}
+.product button {
+  margin-left: 10px;
+}
