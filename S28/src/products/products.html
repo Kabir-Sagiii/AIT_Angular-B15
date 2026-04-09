@@ -1,0 +1,10 @@
+<button (click)="getProducts()">Get All Products</button>
+<app-categories (categoriesCustomEvent)="getCategoryName($event)"></app-categories>
+
+<section id="products">
+  @for (element of anotherData; track element) {
+    @if (selectedCategory === 'all' || element.category === selectedCategory) {
+      <app-product [element]="element"></app-product>
+    }
+  }
+</section>

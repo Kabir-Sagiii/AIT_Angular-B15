@@ -1,0 +1,8 @@
+<div class="parent">
+  <h1>Parent Component</h1>
+  <br />
+  <input type="text" [(ngModel)]="data" />
+  <button (click)="getParentData()">Submit</button>
+
+  <app-child [parentData]="sendDataToChild"></app-child>
+</div>

@@ -1,0 +1,22 @@
+<div class="users">
+  <h1>Users Information</h1>
+
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate magnam eius facere quam illo
+    quae doloremque ducimus, temporibus facilis voluptatum pariatur consequatur, perferendis nihil
+    atque nesciunt accusamus esse aliquam quos explicabo perspiciatis minima quisquam! Hic, error
+    veritatis incidunt libero culpa quod vero autem ducimus quam et, vel facilis maiores. Earum
+    suscipit dignissimos ut eligendi aut velit doloribus voluptate veniam. Ut dicta laboriosam
+    voluptas dolorem id alias, iste aut, quae hic vitae voluptate ex. Quos quae fuga autem velit eum
+    facilis sapiente earum natus, vero consequatur dolorum porro! Libero accusantium eveniet
+    sapiente perspiciatis tempore iusto dignissimos, numquam error culpa ipsam debitis?
+  </p>
+
+  <button (click)="getUsersData()">Get User's</button>
+
+  <ol>
+    @for (user of usersData; track $index) {
+      <li>{{ user.name.first + ' ' + user.name.last }} - {{ user.email }}</li>
+    }
+  </ol>
+</div>

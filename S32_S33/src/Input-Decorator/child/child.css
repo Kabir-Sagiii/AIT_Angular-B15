@@ -1,0 +1,10 @@
+.child {
+  width: 300px;
+  padding: 50px;
+  box-shadow: 0 0 10px green;
+  margin: 30px;
+}
+
+.child h1 {
+  color: green;
+}
