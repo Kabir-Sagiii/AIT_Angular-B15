@@ -1,0 +1,24 @@
+<div
+  class="product"
+  [ngStyle]="{
+    boxShadow: productAddedIncart.includes(element.id) ? '0 0 10px red' : '0 0 10px green',
+  }"
+>
+  <img [src]="element.image" width="100%" height="200" alt="" />
+  <h3 [ngStyle]="{ color: productAddedIncart.includes(element.id) ? 'red' : 'green' }">
+    {{ element.title.slice(0, 21) | custompipe }}
+  </h3>
+  <p>{{ element.price | currency: 'INR' }}</p>
+  <!-- <p>{{ 0.97 | percent }}</p> -->
+  <p style="font-style: italic">{{ element.description.slice(0, 100) | custompipe }}</p>
+  <button (click)="getProductDetails()">Product Details</button>
+  <button
+    [ngStyle]="{
+      color: 'white',
+      backgroundColor: productAddedIncart.includes(element.id) ? 'red' : 'green',
+    }"
+    (click)="actionOnCart($event, element)"
+  >
+    {{ productAddedIncart.includes(element.id) ? 'Remove From Cart' : 'Add to Cart' }}
+  </button>
+</div>

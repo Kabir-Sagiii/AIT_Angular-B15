@@ -1,0 +1,62 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div>
+    <h1>Reactive form</h1>
+  </div>
+  <div>
+    <input formControlName="username" type="text" placeholder="username" /><br />
+    @if (
+      this.signupForm.get('username')?.touched &&
+      this.signupForm.get('username')?.getError('required')
+    ) {
+      <small style="color: red">username is required</small>
+    }
+    @if (
+      this.signupForm.get('username')?.touched &&
+      this.signupForm.get('username')?.getError('minlength')
+    ) {
+      <small style="color: red">minimum 3 character are required</small>
+    }
+
+    @if (
+      this.signupForm.get('username')?.touched &&
+      this.signupForm.get('username')?.errors?.['maxLengthError']
+    ) {
+      <small style="color: red">Max 10 character can be used</small>
+    }
+  </div>
+  <div>
+    <input type="password" formControlName="password" placeholder="password" /><br />
+    @if (
+      this.signupForm.get('password')?.touched &&
+      this.signupForm.get('password')?.getError('required')
+    ) {
+      <small style="color: red">password is required</small>
+    }
+    @if (
+      this.signupForm.get('password')?.touched &&
+      this.signupForm.get('password')?.getError('pattern')
+    ) {
+      <small style="color: red">password is invalid</small>
+    }
+  </div>
+  <div>
+    <input formControlName="email" type="email" placeholder="Email" />
+  </div>
+
+  <div formArrayName="skills">
+    @for (skill of skills.controls; track skill; let i = $index) {
+      <div>
+        <input [formControlName]="i" type="text" placeholder="Add Skills" />
+        <button type="button" (click)="removeUI(i)">Remove</button>
+      </div>
+    }
+  </div>
+
+  <div>
+    <button (click)="addSkills()">Add Skills</button>
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>

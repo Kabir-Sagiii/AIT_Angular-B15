@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      function ui() {
+        var img = document.createElement('img');
+        img.width = '100';
+        img.height = '100';
+        img.src = 'https://www.squash.io/wp-content/uploads/2023/11/javascript-series.jpg';
+
+        img.onclick = function () {
+          img.remove();
+        };
+
+        var h1 = document.querySelector('h1');
+        h1.style.color = 'blue';
+
+        document.querySelector('body').appendChild(img);
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Hello, Javascript !!!!</h1>
+    <button onclick="ui()">Submit</button><br /><br />
+  </body>
+</html>

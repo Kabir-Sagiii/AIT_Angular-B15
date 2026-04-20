@@ -1,0 +1,35 @@
+.favourites-grid {
+  max-width: 780px;
+  margin: 24px auto;
+}
+
+.favourites-grid h2 {
+  margin-bottom: 18px;
+  color: #102a43;
+}
+
+.favourites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.favourite-card {
+  padding: 18px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 45, 78, 0.08);
+  box-shadow: 0 10px 20px rgba(15, 32, 64, 0.04);
+}
+
+.product-name {
+  font-size: 1rem;
+  color: #102a43;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.product-price {
+  color: #0b3954;
+  font-size: 1.05rem;
+}

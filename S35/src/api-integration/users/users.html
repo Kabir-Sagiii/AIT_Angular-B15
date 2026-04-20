@@ -1,0 +1,49 @@
+<!-- <div class="users">
+  <h1>Users Information</h1>
+
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate magnam eius facere quam illo
+    quae doloremque ducimus, temporibus facilis voluptatum pariatur consequatur, perferendis nihil
+    atque nesciunt accusamus esse aliquam quos explicabo perspiciatis minima quisquam! Hic, error
+    veritatis incidunt libero culpa quod vero autem ducimus quam et, vel facilis maiores. Earum
+    suscipit dignissimos ut eligendi aut velit doloribus voluptate veniam. Ut dicta laboriosam
+    voluptas dolorem id alias, iste aut, quae hic vitae voluptate ex. Quos quae fuga autem velit eum
+    facilis sapiente earum natus, vero consequatur dolorum porro! Libero accusantium eveniet
+    sapiente perspiciatis tempore iusto dignissimos, numquam error culpa ipsam debitis?
+  </p>
+
+  <button (click)="getUsersData()">Get User's</button>
+
+  <ol>
+    @if (usersData !== null) {
+      @for (user of (usersData | async)?.results; track $index) {
+        <li>{{ user.name.first + ' ' + user.name.last }} - {{ user.email }}</li>
+      }
+    }
+  </ol>
+</div> -->
+
+<div class="users">
+  <h1>Select the Gender</h1>
+
+  <div style="display: flex; width: 200px; justify-content: space-evenly">
+    <div>
+      <input [(ngModel)]="selectGender" value="male" type="radio" name="gender" />
+      <label for="">Male</label>
+    </div>
+
+    <div>
+      <input [(ngModel)]="selectGender" value="female" type="radio" name="gender" />
+      <label for="">Female</label>
+    </div>
+  </div>
+
+  <div class="users-container">
+    @for (user of users | gender: selectGender; track $index) {
+      <div class="card">
+        <img [src]="user.picture.medium" width="100%" height="230" alt="" />
+        <h3>{{ user.name.first + user.name.lasr }}</h3>
+      </div>
+    }
+  </div>
+</div>

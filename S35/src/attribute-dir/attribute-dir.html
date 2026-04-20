@@ -1,0 +1,42 @@
+<div class="container">
+  <section [ngClass]="{ darkTheme: changeTheme, lightTheme: !changeTheme, 'sub-container': true }">
+    <h1>Attribute Directive with ngClass</h1>
+    <br />
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi consequatur, libero atque
+      obcaecati ab minus natus earum perferendis. Sit fuga ducimus excepturi enim, vel voluptates
+      itaque quo voluptatibus quod autem quisquam atque facilis praesentium impedit ex, quae cumque
+      dignissimos. Repudiandae enim consequatur labore sint id aliquid dolor commodi aspernatur
+      voluptatibus corporis laboriosam voluptas quam maxime quidem repellat ducimus fuga, eaque
+      officia nostrum voluptate esse amet reiciendis debitis? Porro, nulla odio.
+    </p>
+    <br />
+    <input type="checkbox" (change)="fnChangeTheme($event)" />
+    <label for=""> Check to switch Dark Mode</label>
+  </section>
+</div>
+
+<div class="container">
+  <h1 [ngStyle]="{ color: colorName, fontSize: fontsize }">Attribute Directive with ngStyle</h1>
+  <br />
+
+  <section class="flex">
+    <div>
+      <input type="radio" name="color" (change)="changeColor('red')" />
+      <label for="">Red</label>
+    </div>
+    <div>
+      <input type="radio" name="color" (change)="changeColor('blue')" />
+      <label for="">Blue</label>
+    </div>
+
+    <div>
+      <select (change)="changeFontSize($event)">
+        <option value="20px">20</option>
+        <option value="40px">40</option>
+        <option value="60px">60</option>
+        <option value="80px">80</option>
+      </select>
+    </div>
+  </section>
+</div>

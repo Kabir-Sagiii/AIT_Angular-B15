@@ -1,0 +1,50 @@
+<div class="product-details-container">
+  <div>
+    <img [src]="productdetails.productData.image" alt="" />
+  </div>
+  <div class="product-content">
+    <div>
+      <div class="flexContainer">
+        <dl>
+          <dt><b>Product Name</b></dt>
+          <dd>{{ productdetails.productData.name }}</dd>
+        </dl>
+      </div>
+      <div class="flexContainer">
+        <dl>
+          <dt><b>Price</b></dt>
+          <dd>{{ productdetails.productData.price }}</dd>
+        </dl>
+      </div>
+    </div>
+    <div>
+      <div class="flexContainer">
+        <dl>
+          <dt><b>Category</b></dt>
+          <dd>{{ productdetails.productData.category }}</dd>
+        </dl>
+      </div>
+      <div class="flexContainer">
+        <dl>
+          <dt><b>Rating</b></dt>
+          <dd>{{ productdetails.productData.rating }}</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="flexContainer">
+      <dl>
+        <dt><b>Description</b></dt>
+        <dd>{{ productdetails.productData.description }}</dd>
+      </dl>
+    </div>
+
+    <div>
+      <div class="backButtonFlex">
+        <button>Back to Products</button>
+      </div>
+      <div class="addCartButtonFlex">
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

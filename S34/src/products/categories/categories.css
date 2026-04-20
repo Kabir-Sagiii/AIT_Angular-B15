@@ -1,0 +1,7 @@
+#categories {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+}

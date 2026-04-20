@@ -1,0 +1,11 @@
+<app-categories (categoriesCustomEvent)="getCategoryName($event)"></app-categories>
+
+<section id="products">
+  @if (allProducts !== null) {
+    @for (element of allProducts | async; track $index) {
+      @if (selectedCategory === 'all' || element.category === selectedCategory) {
+        <app-product [element]="element"></app-product>
+      }
+    }
+  }
+</section>

@@ -1,0 +1,8 @@
+#category img {
+  border-radius: 50%;
+  box-shadow: 0 0 10px black;
+}
+#category h2 {
+  color: black;
+  margin-top: 11px;
+}

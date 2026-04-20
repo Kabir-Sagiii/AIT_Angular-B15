@@ -1,0 +1,31 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div>
+    <h1>Reactive form</h1>
+  </div>
+  <div>
+    <input formControlName="username" type="text" placeholder="username" /><br />
+    @if (this.signupForm.touched && this.signupForm.get('username')?.getError('required')) {
+      <small style="color: red">username is required</small>
+    }
+    @if (this.signupForm.touched && this.signupForm.get('username')?.getError('minlength')) {
+      <small style="color: red">minimum 3 character are required</small>
+    }
+  </div>
+  <div>
+    <input type="password" formControlName="password" placeholder="password" />
+    @if (this.signupForm.touched && this.signupForm.get('password')?.getError('required')) {
+      <small style="color: red">password is required</small>
+    }
+  </div>
+  <div>
+    <input formControlName="email" type="email" placeholder="Email" />
+  </div>
+
+  <div>
+    <button>Add Skills</button>
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
